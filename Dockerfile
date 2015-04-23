@@ -1,4 +1,5 @@
-FROM debian:jessie
+FROM ubuntu:14.04
+MAINTAINER Johan Lundberg "lundberg@nordu.net"
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r memcache && useradd -r -g memcache memcache
