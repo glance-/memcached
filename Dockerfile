@@ -1,13 +1,13 @@
-FROM ubuntu:14.04
-MAINTAINER Johan Lundberg "lundberg@nordu.net"
+FROM debian:stable
+MAINTAINER Johan Lundberg "lundberg@sunet.net"
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r memcache && useradd -r -g memcache memcache
 
 RUN apt-get update && apt-get install -y libevent-2.0-5 && rm -rf /var/lib/apt/lists/*
 
-ENV MEMCACHED_VERSION 1.4.22
-ENV MEMCACHED_SHA1 5968d357d504a1f52622f9f8a3e85c29558acaa5
+ENV MEMCACHED_VERSION 1.5.9
+ENV MEMCACHED_SHA1 7d3807ed240597444c97e11b0f61d16964feff1c
 
 RUN buildDeps='curl gcc libc6-dev libevent-dev make perl' \
 	&& set -x \
