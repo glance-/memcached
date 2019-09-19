@@ -1,2 +1,6 @@
 triggers:
   cron: "@weekly"
+builders:
+  - docker
+docker_context_dir: debian
+docker_name: memcached
